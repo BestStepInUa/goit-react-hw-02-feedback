@@ -21,19 +21,27 @@ export default class App extends Component{
   }
   addFeedback = stat => this.setState(prev =>({[stat]: prev[stat] + 1}))    
   
-  countTotalFeedback = () => {
-    this.state.reduce((total, stat) => {
-      return total += [stat]
+  countTotalFeedback = () => {    
+    return Object.values(this.state).reduce((total, value) => {
+      return total += value
     })
-  } 
+  }
 
+  countPositiveFeedbackPercentage = () => {
+    const total = this.countTotalFeedback()
+    const { good } = this.state
+    return (total === 0) ? 0 : ((good * 100) / total).toFixed(1)  
+  }
+  
   render() {
-      console.log(this.state);
-        return (
-          <StyledAppContainer>
-            <Feedback stats={Object.keys(this.state)} addFeedback={this.addFeedback}/>
-            <Statistics stats={Object.entries(this.state)} countTotalFeedback={this.countTotalFeedback} />
-          </StyledAppContainer>
+    return (
+      <StyledAppContainer>
+        <Feedback stats={Object.keys(this.state)} addFeedback={this.addFeedback}/>
+        <Statistics stats={Object.entries(this.state)}
+                    countTotalFeedback={this.countTotalFeedback}
+                    countPositiveFeedbackPercentage={this.countPositiveFeedbackPercentage}
+        />
+      </StyledAppContainer>
     );
     }
 };

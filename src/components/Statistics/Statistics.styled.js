@@ -8,6 +8,7 @@ const StatisticsContainer = styled.div`
 
 p {
     font-size: 18px;
+    font-style: italic;
 }
 `
-export default StatisticsContainer;
+export default StatisticsContainer
