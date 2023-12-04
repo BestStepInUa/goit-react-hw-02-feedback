@@ -1,17 +1,22 @@
 import { Component } from "react";
-import FeedbackContainer from './Feedback_styled'
+import FeedbackContainer from './Feedback.styled'
 
 export default class Feedback extends Component  {    
     render() {
-        const { addFeedback } = this.props.addFeedback;
-        console.log(this.props.addFeedback);
+        const { addFeedback } = this.props;        
         return (
             <FeedbackContainer>
                 <h2>Please leave feedback</h2>
                 <div>
-                    <button onClick={addFeedback} name='good'>Good</button>
-                    <button onClick={addFeedback} name='neutral'>Neutral</button>
-                    <button onClick={addFeedback} name='bad'>Bad</button>
+                    {this.props.stats.map(stat => (
+                        <button
+                            type="button"
+                            key={stat}
+                            onClick={() => addFeedback(stat)}
+                        >
+                            {stat}
+                        </button>
+                    ))}                    
                 </div>
             </FeedbackContainer>   
         )
