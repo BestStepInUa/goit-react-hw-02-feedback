@@ -3,7 +3,7 @@ import FeedbackContainer from './Feedback.styled'
 
 export default class Feedback extends Component  {    
     render() {
-        const { addFeedback } = this.props;        
+        const { addFeedback } = this.props       
         return (
             <FeedbackContainer>
                 <h2>Please leave feedback</h2>

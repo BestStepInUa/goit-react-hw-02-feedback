@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const StatisticsContainer = styled.div`
     margin-top: 30px;
@@ -9,6 +9,10 @@ const StatisticsContainer = styled.div`
 p {
     font-size: 18px;
     font-style: italic;
+}
+
+p:nth-last-child(-n + 2) {
+    font-weight: bold;
 }
 `
 export default StatisticsContainer

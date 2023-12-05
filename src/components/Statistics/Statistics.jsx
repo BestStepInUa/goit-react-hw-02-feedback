@@ -1,5 +1,5 @@
-import { Component } from "react";
-import StatisticsContainer from "./Statistics.styled";
+import { Component } from "react"
+import StatisticsContainer from "./Statistics.styled"
 
 export default class Statistics extends Component {      
     render() { 

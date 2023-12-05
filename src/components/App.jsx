@@ -1,8 +1,8 @@
-/* eslint-disable no-restricted-globals */
-import { Component } from "react";
-import Feedback from "./Feedback";
-import Statistics from "./Statistics";
-import styled from "styled-components";
+import { Component } from "react"
+import Feedback from "./Feedback"
+import Statistics from "./Statistics"
+import Notification from "./Notification"
+import styled from "styled-components"
 
 const StyledAppContainer = styled.div`
     height: 100vh;
@@ -27,21 +27,22 @@ export default class App extends Component{
     })
   }
 
-  countPositiveFeedbackPercentage = () => {
-    const total = this.countTotalFeedback()
+  countPositiveFeedbackPercentage = () => {    
     const { good } = this.state
-    return (total === 0) ? 0 : ((good * 100) / total).toFixed(1)  
+    return (this.countTotalFeedback() === 0) ? 0 : ((good * 100) / this.countTotalFeedback()).toFixed(1)  
   }
   
   render() {
-    return (
+    
+    return (      
       <StyledAppContainer>
-        <Feedback stats={Object.keys(this.state)} addFeedback={this.addFeedback}/>
+        <Feedback stats={Object.keys(this.state)} addFeedback={this.addFeedback} />        
+        {(this.countTotalFeedback() === 0) ? <Notification message="There is no feedback"/> :
         <Statistics stats={Object.entries(this.state)}
                     countTotalFeedback={this.countTotalFeedback}
                     countPositiveFeedbackPercentage={this.countPositiveFeedbackPercentage}
-        />
+        />}        
       </StyledAppContainer>
-    );
+    )
     }
-};
+}

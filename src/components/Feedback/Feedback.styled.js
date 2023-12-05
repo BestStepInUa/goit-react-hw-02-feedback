@@ -18,4 +18,4 @@ button {
     cursor: pointer;
 }
 `
-export default FeedbackContainer;
+export default FeedbackContainer
