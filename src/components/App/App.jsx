@@ -31,7 +31,9 @@ export default class App extends Component {
     return (
       <AppContainer>
         <Section title="Please leave Feedback">
-          <Feedback stats={Object.keys(this.state)} addFeedback={this.addFeedback} />
+          <Feedback stats={Object.keys(this.state)}
+            addFeedback={this.addFeedback}
+          />
         </Section>
 
         <Section title="Statistics">
