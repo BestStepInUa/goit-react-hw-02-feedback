@@ -1,7 +1,7 @@
 import { Component } from "react";
 import FeedbackContainer from './Feedback.styled'
 
-export default class Feedback extends Component  {    
+export default class Feedback extends Component  {   
     render() {
         const { addFeedback } = this.props       
         return (
