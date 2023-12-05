@@ -7,7 +7,7 @@ const Statistics = ({stats, countTotalFeedback, countPositiveFeedbackPercentage}
                 <p key={stat[0]}>{stat[0]}: <span>{stat[1]}</span></p>
             ))}                            
             <p key="Total">Total: <span>{countTotalFeedback()}</span></p>
-            <p key="Positive feedback">Positive feedback: <span>{countPositiveFeedbackPercentage()}%</span></p>
+            <p key="Positive feedback">Positive feedback: <span>{countPositiveFeedbackPercentage()} %</span></p>
         </StatisticsContainer>
 
     )   
