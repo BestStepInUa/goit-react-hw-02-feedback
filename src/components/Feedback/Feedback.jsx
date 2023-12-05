@@ -6,8 +6,6 @@ export default class Feedback extends Component  {
         const { addFeedback } = this.props       
         return (
             <FeedbackContainer>
-                <h2>Please leave feedback</h2>
-                <div>
                     {this.props.stats.map(stat => (
                         <button
                             type="button"
@@ -16,8 +14,7 @@ export default class Feedback extends Component  {
                         >
                             {stat}
                         </button>
-                    ))}                    
-                </div>
+                    ))}                     
             </FeedbackContainer>   
         )
     }  

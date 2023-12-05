@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 const StatisticsContainer = styled.div`
-    margin-top: 30px;
+    margin-top: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     row-gap: 5px;
 
 p {

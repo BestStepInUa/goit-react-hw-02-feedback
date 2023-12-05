@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 
 const FeedbackContainer = styled.div`
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;    
-    row-gap: 5px;
-div {
-    display: flex;
-    justify-content: center;    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;        
     column-gap: 5px;
-}
+    justify-content: center;
+
 button {
     background-color: white;
     font-size: 18px;
